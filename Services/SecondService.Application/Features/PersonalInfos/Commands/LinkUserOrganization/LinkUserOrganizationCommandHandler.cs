@@ -30,7 +30,7 @@ namespace SecondService.Application.Features.PersonalInfos.Commands.LinkUserOrga
                 throw new NotFoundException(nameof(Organization), request.OrganizationId);
             }
 
-            var user = await _userRepository.GetByIdAsync(request.OrganizationId);
+            var user = await _userRepository.GetByIdAsync(request.UserId);
             if (user == null)
             {
                 throw new NotFoundException(nameof(User), request.UserId);

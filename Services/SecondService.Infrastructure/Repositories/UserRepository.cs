@@ -16,7 +16,7 @@ namespace SecondService.Infrastructure.Repositories
 
         public async Task<IList<User>> GetByOrganizationAsync(int organizationId, int offset, int count)
         {
-            var users = await _dbContext.Users.Where(x => x.Id == organizationId).Skip(offset).Take(count).ToListAsync();
+            var users = await _dbContext.Users.Where(x => x.OrganizationId == organizationId).Skip(offset).Take(count).ToListAsync();
 
             return users;
         }
